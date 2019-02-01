@@ -101,6 +101,9 @@
     </style>
   </head>
   <body>
+    <audio src="src/blop.mp3" id="blop"></audio>
+    <audio src="src/win.mp3" id="win"></audio>
+    <audio src="src/loss.mp3" id="loss"></audio>
   	<div class="panel">Indique la cantidad de niveles: <input type="number" name="nLevel" id="nLevel" value="10"></div>
     <div class="gameboard">
       <div id="celeste" class="color celeste left" data-color="celeste"></div>
@@ -118,6 +121,10 @@
       const verde = document.getElementById('verde')
       const btnEmpezar = document.getElementById('btnEmpezar')
       const ULTIMO_NIVEL = document.getElementById('nLevel')
+
+      const blop = document.getElementById('blop')
+      const win = document.getElementById('win')
+      const loss = document.getElementById('loss')
 
       class Juego {
         constructor() {
@@ -228,6 +235,8 @@
           const numeroColor = this.transformarColorANumero(nombreColor)
           this.iluminarColor(nombreColor)
 
+          blop.play()
+
           if(numeroColor === this.secuencia[this.subnivel]){
             this.subnivel++
             if(this.subnivel === this.nivel){
@@ -245,11 +254,13 @@
         }
 
         ganoElJuego(){
+          win.play()
           swal('Simon Game', 'Felicitaciones, ganaste el juego!', 'success')
             .then(this.inicializar())
         }
 
         perdioElJuego(){
+          loss.play()
           swal('Simon Game', 'Lo lamentamos, perdiste el juego!', 'error')
             .then(() => {
               this.eliminarEventosClick()
