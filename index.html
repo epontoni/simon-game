@@ -37,35 +37,39 @@
       }
 
       .celeste {
-        background: #22a6b3;
+        background: #2980b9;
+        transition: background .25s;
       }
 
       .celeste.light {
-        background: #7ed6df;
+        background: #3498db;
       }
 
       .violeta {
-        background: #be2edd;
+        background: #8e44ad;
+        transition: background .25s;
       }
 
       .violeta.light {
-        background: #e056fd;
+        background: #9b59b6;
       }
 
       .naranja {
-        background: #f0932b;
+        background: #d35400;
+        transition: background .25s;
       }
 
       .naranja.light {
-        background: #ffbe76;
+        background: #e67e22;
       }
 
       .verde {
-        background: #6ab04c;
+        background: #27ae60;
+        transition: background .25s;
       }
 
       .verde.light {
-        background: #badc58;
+        background: #2ecc71;
       }
 
       .btn-start {
@@ -74,9 +78,16 @@
         background: #ecf0f1;
         color: #2c3e50;
         font-size: 2.5rem;
+        border: 3px solid #34495e;
+        border-radius: .5rem;
         position: absolute;
         top: calc(50% - 50px);
         left: calc(50% - 200px);
+        transition: background-color .5s;
+      }
+      .btn-start:hover {
+          cursor: pointer;
+          background-color: #bdc3c7;
       }
 
       .hide {
@@ -110,7 +121,7 @@
       <div id="violeta" class="color violeta right" data-color="violeta"></div>
       <div id="naranja" class="color naranja left" data-color="naranja"></div>
       <div id="verde" class="color verde right" data-color="verde"></div>
-      <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">Empezar a jugar!</button>
+      <button id="btnEmpezar" class="btn-start" onclick="empezarJuego()">¡Empezar a jugar!</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
